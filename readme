@@ -1,0 +1,41 @@
+# Bookstore API - Spring Boot Project
+
+## Giới thiệu
+Dự án này là một API quản lý sách sử dụng Spring Boot và MySQL. API cho phép thực hiện các thao tác CRUD (Create, Read, Update, Delete) trên một danh sách sách. Dự án sử dụng MySQL để lưu trữ dữ liệu và cung cấp các tính năng như kiểm tra ISBN duy nhất, kiểm tra giá sách không được âm và thông báo khi xóa hoặc cập nhật sách.
+
+## Các yêu cầu cần thiết
+- JDK 17 hoặc phiên bản cao hơn
+- Maven 3.x trở lên
+- MySQL 5.7 hoặc phiên bản cao hơn
+- Postman hoặc công cụ tương tự để kiểm thử API
+
+## Cài đặt và cấu hình
+
+### 1. Cài đặt MySQL
+Trước khi chạy ứng dụng, bạn cần cài đặt MySQL trên máy của bạn. Bạn có thể tải MySQL tại [đây](https://dev.mysql.com/downloads/installer/).
+
+### 2. Cấu hình cơ sở dữ liệu MySQL
+Tạo một cơ sở dữ liệu mới trong MySQL, ví dụ:
+```sql
+CREATE DATABASE bookstore;
+INSERT INTO books (title, author, published_date, isbn, price) VALUES 
+('Book Title 1', 'Author 1', '2023-01-01', '1234567890123', 9.99),
+('Book Title 2', 'Author 2', '2023-02-01', '1234567890124', 19.99);
+```
+### Cấu hình file application.properties
+spring.application.name=bookstore
+spring.datasource.url=jdbc:mysql://localhost:3306/bookstore
+spring.datasource.username=your-username
+spring.datasource.password=your-password
+spring.jpa.hibernate.ddl-auto=update
+spring.jpa.show-sql=true
+
+### Cài đặt các thư viện
+Trong thư mục gốc của dự án, mở terminal và chạy lệnh sau để cài đặt các thư viện cần thiết:
+mvn clean install
+
+### Chạy ứng dụng
+Tìm file BookstoreApplication.java trong đường dẫn src/main/java/com/example/bookstore và nhấn run
+
+### Ứng dụng sẽ được chạy tại http://localhost:8080.
+Bạn có thể sử dụng postman để check những tính năng CRUD cũng như xem những bắt lỗi 

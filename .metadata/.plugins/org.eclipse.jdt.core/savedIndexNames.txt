@@ -1,0 +1,4 @@
+INDEX VERSION 1.134+C:\Users\admin\OneDrive\Máy tính\bookstore\.metadata\.plugins\org.eclipse.jdt.core
+491026810.index
+1067094681.index
+1865797976.index
